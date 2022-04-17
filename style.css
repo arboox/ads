@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "Neurial Grotesk";
+  src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Bold.woff2?v=1622426113808")
+      format("woff2"),
+    url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Bold.woff?v=1622426113395")
+      format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neurial Grotesk";
+  src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Light.woff2?v=1622426115945")
+      format("woff2"),
+    url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Light.woff?v=1622426114809")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neurial Grotesk";
+  src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Medium.woff2?v=1622426118336")
+      format("woff2"),
+    url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Medium.woff?v=1622426117209")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neurial Grotesk";
+  src: url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Regular.woff2?v=1622426120692")
+      format("woff2"),
+    url("https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2FNeurialGrotesk-Regular.woff?v=1622426119595")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basier Circle";
+  src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff2?v=1628276477678")
+      format("woff2"),
+    url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Regular.woff?v=1628276478719")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basier Circle";
+  src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff2?v=1628276475280")
+      format("woff2"),
+    url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-Medium.woff?v=1628276476551")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Basier Circle";
+  src: url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff2?v=1628276647759")
+      format("woff2"),
+    url("https://cdn.glitch.com/99f47cc5-a3af-41bd-9426-43d887207b59%2FBasierCircle-SemiBold.woff?v=1628276474252")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nationale";
+  src: url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-Medium.woff2?v=1648416316281")
+      format("woff2"),
+    url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-Medium.woff?v=1648416316281")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nationale";
+  src: url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-DemiBold.woff2?v=1648416316408")
+      format("woff2"),
+    url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-DemiBold.woff?v=1648416316496")
+      format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nationale";
+  src: url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-Bold.woff2?v=1648416316562")
+      format("woff2"),
+    url("https://cdn.glitch.global/99f47cc5-a3af-41bd-9426-43d887207b59/Nationale-Bold.woff?v=1648416316751")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.animate-reveal {
+  opacity: 0;
+  -webkit-animation: reveal 0.3s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  animation: reveal 0.3s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
