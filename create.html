@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ads Studio - ARBOOX™</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2Fapp-icon.svg?v=1625246866247"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <style>
+    body {
+      background-color: #00b3ff;
+      margin: 0px;
+      font-family: "Nationale", system-ui;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+    }
+
+    .main {
+      width: 100%;
+      height: 90vh;
+      background-color: #ffffff;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      border-radius: 26px 26px 0px 0px;
+      filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.08));
+      overflow-y: auto;
+    }
+
+    .main-content {
+      width: 50%;
+      height: 100%;
+      float: left;
+      display: inline;
+      overflow-y: auto;
+    }
+
+    .main-content-section {
+      width: 90%;
+      height: 300px;
+      background-color: #ffffff;
+      border: solid 1px #e3e3e3;
+      border-radius: 10px;
+      filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.04));
+      float: left;
+      margin-left: 40px;
+      overflow: hidden;
+    }
+
+    .input-ads {
+      width: auto;
+      height: 36px;
+      font-family: "Nationale", system-ui;
+      font-size: 20px;
+      border: none;
+      border-bottom: solid 1.6px #e3e3e3;
+      display: inline;
+      transition: linear 100ms;
+    }
+
+    .input-ads:focus {
+      border: none;
+      outline: none;
+      border-bottom: solid 2px #00b3ff;
+    }
+
+    ::placeholder {
+      color: #e3e3e3;
+    }
+
+    :-ms-input-placeholder {
+      color: #e3e3e3;
+    }
+
+    ::-ms-input-placeholder {
+      color: #e3e3e3;
+    }
+
+    .pure-material-switch {
+      z-index: 0;
+      position: relative;
+      display: inline-block;
+      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+      font-family: var(
+        --pure-material-font,
+        "Roboto",
+        "Segoe UI",
+        BlinkMacSystemFont,
+        system-ui,
+        -apple-system
+      );
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Input */
+    .pure-material-switch > input {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      z-index: -1;
+      position: absolute;
+      right: 6px;
+      top: -8px;
+      display: block;
+      margin: 0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+      outline: none;
+      opacity: 0;
+      transform: scale(1);
+      pointer-events: none;
+      transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+    }
+
+    /* Span */
+    .pure-material-switch > span {
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* Track */
+    .pure-material-switch > span::before {
+      content: "";
+      float: right;
+      display: inline-block;
+      margin: 5px 0 5px 10px;
+      border-radius: 7px;
+      width: 36px;
+      height: 14px;
+      background-color: #e3e3e3;
+      vertical-align: top;
+      transition: background-color 0.2s, opacity 0.2s;
+    }
+
+    /* Thumb */
+    .pure-material-switch > span::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 16px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    /* Checked */
+    .pure-material-switch > input:checked {
+      right: -10px;
+      background-color: #00b3ff;
+    }
+
+    .pure-material-switch > input:checked + span::before {
+      background-color: #00b3ff50;
+    }
+
+    .pure-material-switch > input:checked + span::after {
+      background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+      transform: translateX(16px);
+    }
+
+    /* Hover, Focus */
+    .pure-material-switch:hover > input {
+      opacity: 0.04;
+    }
+
+    .pure-material-switch > input:focus {
+      opacity: 0.12;
+    }
+
+    .pure-material-switch:hover > input:focus {
+      opacity: 0.16;
+    }
+
+    /* Active */
+    .pure-material-switch > input:active {
+      opacity: 1;
+      transform: scale(0);
+      transition: transform 0s, opacity 0s;
+    }
+
+    .pure-material-switch > input:active + span::before {
+      background-color: rgba(
+        var(--pure-material-primary-rgb, 33, 150, 243),
+        0.6
+      );
+    }
+
+    .pure-material-switch > input:checked:active + span::before {
+      background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    }
+
+    /* Disabled */
+    .pure-material-switch > input:disabled {
+      opacity: 0;
+    }
+
+    .pure-material-switch > input:disabled + span {
+      color: rgb(var(--pure-material-onsurface-rgb, 0, 0, 0));
+      opacity: 0.38;
+      cursor: default;
+    }
+
+    .pure-material-switch > input:disabled + span::before {
+      background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    }
+
+    .pure-material-switch > input:checked:disabled + span::before {
+      background-color: rgba(
+        var(--pure-material-primary-rgb, 33, 150, 243),
+        0.6
+      );
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px; /* width of the entire scrollbar */
+    }
+
+    .preview {
+      float: right;
+      width: 240px;
+      height: 426px;
+      background-color: #f0f0f0;
+      display: inline;
+      margin-top: 40px;
+      margin-right: 160px;
+      background-color: #ffffff;
+      border: solid 1px #e3e3e3;
+      border-radius: 10px;
+      filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.04));
+      overflow: hidden;
+      cursor: pointer;
+      transition: linear 100ms;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .preview:hover {
+      filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.08));
+    }
+    
+    .primary {
+      height: 36px;
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      font-family: "Nationale", system-ui;
+      background-color: #00B3FF;
+      color: #FFFFFF;
+      font-weight: 500;
+      cursor: pointer;
+      transition: linear 200ms;
+      z-index: 8;
+    }
+    
+    .primary:hover {
+      background-color: #00B3FF50;
+      border: solid 1px #00B3FF;
+      color: #00B3FF;
+    }
+    
+    .primary-black {
+      height: 36px;
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      font-family: "Nationale", system-ui;
+      background-color: #000000;
+      color: #FFFFFF;
+      font-weight: 500;
+      cursor: pointer;
+      transition: linear 200ms;
+      z-index: 8;
+    }
+    
+    .primary-black:hover {
+      background-color: transparent;
+      border: solid 1px #000000;
+      color: #000000;
+    }
+    
+    .media-upload-s {
+      width: 86%;
+      max-width: 760px;
+      height: 98%;
+       background-color: #ffffff;
+      position: fixed;
+      position: -webkit-fixed;
+      top: 0;
+      border-radius: 26px;
+      filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.2));
+      margin: 0;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .ready-s {
+      width: 50%;
+      height: 260px;
+       background-color: #ffffff;
+      position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      border-radius: 26px;
+      filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.2));
+      z-index: 1000;
+      display: none;
+      animation-delay: 4s;
+    }
+    
+    .abas-upload {
+      width: 100%;
+      height: 100px;
+       background-color: #ffffff;
+       position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
+      filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08));
+      z-index: 1000;
+      display: none;
+    }
+    
+    .objective-sel {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 160px;
+      height: 140px;
+      border: solid 1.2px #E3E3E3;
+      border-radius: 6px;
+      float: left;
+      margin-left: 40px;
+      cursor: pointer;
+      transition: linear 100ms;
+      background-color: #FFFFFF;
+      display: inline-block;
+      margin-top: 0px;
+    }
+    
+    .objective-sel:hover {
+      filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.06));
+    }
+    
+       .objective-sel:checked {
+      border: solid 2.6px #00B3FF;
+      filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08));
+    }
+    
+    #obj-sel-1:checked + #o-i-1 {
+      color: #00B3FF;
+    }
+    
+    #obj-sel-2:checked + #o-i-2 {
+      color: #00B3FF;
+    }
+    
+    #obj-sel-3:checked + #o-i-3 {
+      color: #00B3FF;
+    }
+    
+    .ad-type-sel {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 130px;
+      height: 240px;
+      border: solid 1.2px #E3E3E3;
+      border-radius: 6px;
+      float: left;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: linear 100ms;
+      background-color: #FFFFFF;
+      display: inline;
+      margin-top: 0px;
+    }
+    
+    .ad-type-sel:hover {
+      filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.06));
+    }
+    
+    .ad-type-sel:checked {
+      border: solid 2.6px #00B3FF;
+      filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08));
+    }
+    
+    .type-inner {
+      color: #E3E3E3;
+    }
+    
+    #ad-sel-1:checked + #t-i-1 {
+      color: #00B3FF;
+    }
+    
+    #ad-sel-2:checked + #t-i-2 {
+      color: #00B3FF;
+    }
+    
+    #ad-sel-3:checked + #t-i-3 {
+      color: #00B3FF;
+    }
+    
+    .emerge {
+  opacity: 0;
+  -webkit-animation: emerge 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  animation: emerge 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+}
+
+@-webkit-keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+    
+    .checkout-cont {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      position: -webkit-fixed;
+      top: 0;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: none;
+    }
+  </style>
+  <body>
+    <center>
+      <div
+        style="
+          position: fixed;
+          position: -webkit-fixed;
+          top: 0;
+          color: #ffffff;
+          width: 100%;
+        "
+      >
+        <h3 style="font-weight: 600; margin-left: 20px; float: left">
+          Ads Studio
+        </h3>
+        <h4
+          style="
+            font-weight: 500;
+            margin-left: 14px;
+            float: left;
+            margin-top: 20px;
+          "
+        >
+          Quick create
+        </h4>
+        <br />
+        <h5
+          style="
+            font-weight: 600;
+            margin-right: 20px;
+            margin-top: 2px;
+            float: right;
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+          "
+            id="checkout-t"
+        >
+          Checkout&ensp;<i class="bi bi-chevron-right"></i>
+        </h5>
+        <h5
+          style="
+            font-weight: 500;
+            margin-right: 24px;
+            margin-top: 2px;
+            float: right;
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          "
+        >
+          Self service
+        </h5>
+      </div>
+      <form name="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbxDDzVxOFXuc2AAcwJg2bxYIwj41-iCWISamXbFsIs9BVwA3nyd1Q_v2dBH9yqgBODN/exec">
+      <div class="main">
+        <div class="main-content">
+          <h2
+            style="
+              font-weight: 600;
+              margin-left: 40px;
+              margin-top: 36px;
+              text-align: left;
+            "
+          >
+            Ad setup
+          </h2>
+          <br />
+          <p
+            style="
+              text-align: left;
+              margin-left: 40px;
+              color: #cccccc;
+              margin-top: -30px;
+            "
+          >
+            Choose your main goals and the brightest audience. Select the dates
+            and budget that work best for your campaign.
+          </p>
+          <br />
+          <br>
+          <h3 style="font-weight: 600; margin-left: 40px; text-align: left; margin-bottom: 10px;">
+            Select your objective
+          </h3>
+          <br>
+          <div style="display: inline-block; float: left;">
+          <input type="radio" name="objective" value="Drive traffic to my site" class="objective-sel" id="obj-sel-1">
+            <div class="type-inner" id="o-i-1" style="float: left; position: relative; top: 20px; left: -132px;">
+            <i class="bi bi-window-stack" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; width: 100px;">
+                Drive traffic to my site
+            </p>
+            </div>
+          </div>
+          &ensp;
+          <div style="display: inline-block; float: left; margin-left: -130px;">
+          <input type="radio" name="objective" value="Increase app downloads" class="objective-sel" id="obj-sel-2">
+            <div class="type-inner" id="o-i-2" style="float: left; position: relative; top: 20px; left: -132px;">
+            <i class="bi bi-file-arrow-down" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; width: 100px;">
+               Increase app downloads
+            </p>
+            </div>
+          </div>
+          &ensp;
+          <div style="display: inline-block; float: left; margin-left: -160px; position: relative; left: 30px;">
+          <input type="radio" name="objective" value="Grow awareness" class="objective-sel" id="obj-sel-3">
+            <div class="type-inner" id="o-i-3" style="float: left; position: relative; top: 20px; left: -132px;">
+            <i class="bi bi-binoculars" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; width: 100px;">
+               Grow awareness
+            </p>
+            </div>
+          </div>
+          <br>
+          <div style="clear: both;">
+            
+          </div>
+          <div class="main-content-section" style="margin-top: 40px;">
+            <h4
+              style="
+                font-weight: 500;
+                text-align: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              Ad details
+            </h4>
+            <br />
+            <div
+              style="
+                width: 100%;
+                height: 0.6px;
+                background-color: #e3e3e3;
+                margin-top: -26px;
+              "
+            ></div>
+            <br />
+            <div
+              style="
+                width: 140px;
+                float: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Ad name
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Ad sharing&ensp;<i
+                  class="bi bi-info-circle"
+                  id="adsharing-info-t"
+                ></i>
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Business name
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Custom CTA&ensp;<i
+                  class="bi bi-info-circle"
+                  id="customcta-info-t"
+                ></i>
+              </p>
+            </div>
+            &ensp;
+            <div
+              style="
+                width: 300px;
+                display: inline;
+                float: left;
+                margin-left: 28px;
+              "
+            >
+              <input
+                class="input-ads"
+                type="text"
+                placeholder="My new advertisement"
+                style="width: 100%; margin-top: 10px"
+                     name="ad-name"
+              />
+              <br />
+              <label
+                class="pure-material-switch"
+                style="float: left; margin-top: 16px"
+                     name="ad-sharing" value="true"
+              >
+                <input type="checkbox" name="ad-sharing" value="true"/><label class="pure-material-switch">
+                  <input type="checkbox" name="ad-sharing" value="true"/>
+                  <span></span>
+                </label>
+              </label>
+              <br />
+              <input
+                class="input-ads"
+                type="text"
+                placeholder="Catcorp, LLC"
+                style="width: 100%; margin-top: 16px"
+                name="business-name"
+              />
+              <br />
+              <select style="width: 100%; margin-top: 10px" class="input-ads" name="cta">
+                <option value="Sign Up">Sign Up</option>
+                <option value="Visit site">Visit site</option>
+                <option value="Learn more">Learn more</option>
+                <option value="Try now">Try now</option>
+                <option value="Get">Get</option>
+                <option value="Buy">Buy</option>
+                <option value="Purchase">Purchase</option>
+                <option value="Shop now">Shop now</option>
+                <option value="Install">Install</option>
+                <option value="Download">Download</option>
+                <option value="Get started">Get started</option>
+                <option value="Discover">Discover</option>
+                <option value="Join">Join</option>
+                <option value="Watch">Watch</option>
+                <option value="Stream now">Stream now</option>
+                <option value="Listen now">Listen now</option>
+                <option value="Drive me there">Drive me there</option>
+                <option value="Take me there">Take me there</option>
+              </select>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+          <div class="main-content-section" style="margin-top: 24px; height: 250px !important;">
+            <h4
+              style="
+                font-weight: 500;
+                text-align: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              Landing
+            </h4>
+            <br />
+            <div
+              style="
+                width: 100%;
+                height: 0.6px;
+                background-color: #e3e3e3;
+                margin-top: -26px;
+              "
+            ></div>
+            <br />
+            <div
+              style="
+                width: 140px;
+                float: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Site name&ensp;<i
+                  class="bi bi-info-circle"
+                  id="sitename-info-t"
+                ></i>
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+               Landing URL
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Type&ensp;<i
+                  class="bi bi-info-circle"
+                  id="adtype-info-t"
+                ></i>
+              </p>
+            </div>
+            &ensp;
+            <div
+              style="
+                width: 300px;
+                display: inline;
+                float: left;
+                margin-left: 28px;
+              "
+            >
+              <input
+                class="input-ads"
+                type="text"
+                placeholder="My site"
+                style="width: 100%; margin-top: 10px"
+                name="site-name"
+              />
+              <br />
+              <input
+                class="input-ads"
+                type="text"
+                placeholder="https://arboox.com"
+                style="width: 100%; margin-top: 16px"
+                name="landing-url"
+              />
+              <br />
+              <select style="width: 100%; margin-top: 10px" class="input-ads" name="site-type">
+                <option value="Website landing">Website landing</option>
+                <option value="Website landing">E-commerce/Online purchase</option>
+                <option value="Social landing">Social landing</option>
+                <option value="Local business">Local business</option>
+                <option value="App Store">App Store</option>
+              </select>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+          <div
+            class="main-content-section"
+            style="margin-top: 24px; height: 250px !important"
+          >
+            <h4
+              style="
+                font-weight: 500;
+                text-align: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              Audience
+            </h4>
+            <br />
+            <div
+              style="
+                width: 100%;
+                height: 0.6px;
+                background-color: #e3e3e3;
+                margin-top: -26px;
+              "
+            ></div>
+            <br />
+            <div
+              style="
+                width: 140px;
+                float: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Region
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Interests
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                Age range
+              </p>
+            </div>
+            &ensp;
+            <div
+              style="
+                width: 300px;
+                display: inline;
+                float: left;
+                margin-left: 28px;
+              "
+            >
+              <select style="width: 100%; margin-top: 10px" class="input-ads" name="ad-region">
+                <option value="AU/CA">Australia & Canada</option>
+                <option value="US">United States</option>
+                <option value="MEX">Mexico</option>
+                <option value="FR">France</option>
+                <option value="UAE">United Arab Emirates</option>
+                <option value="JP">Japan</option>
+                <option value="Global">Global</option>
+              </select>
+              <br />
+              <select style="width: 100%; margin-top: 16px" class="input-ads" name="audience-interests">
+                <option value="Fashion/Lifestyle">Fashion/Lifestyle</option>
+                <option value="Vehicles">Vehicles</option>
+                <option value="Technology">Technology</option>
+                <option value="Travel">Travel</option>
+                <option value="Culture">Culture</option>
+                <option value="Education">Education</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Art and design">Art and design</option>
+                <option value="Health/Fitness">Health/Fitness</option>
+                <option value="Productivity">Productivity</option>
+                <option value="Streaming">Streaming</option>
+                <option value="Music & Audio">Music & Audio</option>
+                <option value="New products">New products</option>
+                <option value="Gastronomy">Gastronomy</option>
+              </select>
+              <br />
+              <select style="width: 100%; margin-top: 14px" class="input-ads" name="age-range">
+                <option value="13-18">13-20</option>
+                <option value="18-25">20-28</option>
+                <option value="25-40">28-35</option>
+                <option value="35+">35+</option>
+              </select>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+          <div class="main-content-section" style="margin-top: 24px; height: 200px !important; margin-bottom: 40px;">
+            <h4
+              style="
+                font-weight: 500;
+                text-align: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              Dates
+            </h4>
+            <br />
+            <div
+              style="
+                width: 100%;
+                height: 0.6px;
+                background-color: #e3e3e3;
+                margin-top: -26px;
+              "
+            ></div>
+            <br />
+            <div
+              style="
+                width: 140px;
+                float: left;
+                margin-left: 16px;
+                margin-top: 16px;
+              "
+            >
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Start date
+              </p>
+              <br />
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 20px;
+                "
+              >
+                End date
+              </p>
+            </div>
+            &ensp;
+            <div
+              style="
+                width: 300px;
+                display: inline;
+                float: left;
+                margin-left: 28px;
+              "
+            >
+              <input
+                class="input-ads"
+                type="date"
+                style="width: 100%; margin-top: 10px"
+                name="start-date"
+              />
+             <br>
+               <input
+                class="input-ads"
+                type="date"
+                style="width: 100%; margin-top: 10px"
+                name="end-date"
+              />
+            </div>
+          </div>
+        </div>
+        &ensp;
+        <div style="float: right; width: 50%; height: 100%; display: inline;">
+          <center>
+          <div class="preview" id="media-s-t">
+            <img src="https://cdn.glitch.com/702773f6-09f4-4fc6-b7d6-303b28d605da%2Fplace.png?v=1630711364898" style="width: 100%; height: 100%; object-fit: cover; position: relative;" id="ad-final-img">
+            <video src="" style="width: 100%; height: 100%; object-fit: cover; position: fixed; position: -webkit-fixed; top: 0; left: 0;" id="ad-final-mov" autoplay loop></video>
+            </div>
+          </center>
+        </div>
+        <div class="media-upload-s emerge" id="media-s">
+          <h4 style="font-weight: 600; text-align: left; margin-left: 20px; font-size: 17px;">
+            Choose your ARBOOX Ad type
+          </h4>
+          <br>
+          <p style="color: #CCCCCC; text-align: left; margin-left: 20px; margin-top: -36px; font-size: 12px;">
+            Click Next to create a draft ad and proceed
+          </p>
+          <br>
+          <div style="display: inline;">
+          <input type="radio" name="ad-type" value="Short" class="ad-type-sel" id="ad-sel-1">
+            <div class="type-inner" id="t-i-1" style="float: left; position: relative; top: 80px; left: -96px;">
+            <i class="bi bi-play-circle" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                Short
+            </p>
+            </div>
+          </div>
+          &ensp;
+          <div style="display: inline;">
+          <input type="radio" name="ad-type" value="App install" class="ad-type-sel" id="ad-sel-2" style="margin-left: -40px;">
+            <div class="type-inner" id="t-i-2" style="float: left; position: relative; top: 80px; left: -116px;">
+            <i class="bi bi-download" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                App install
+            </p>
+            </div>
+          </div>
+          &ensp;
+          <div style="display: inline;">
+          <input type="radio" name="ad-type" value="Web view" class="ad-type-sel" id="ad-sel-3" style="margin-left: -85px;">
+            <div class="type-inner" id="t-i-3" style="float: left; position: relative; top: 80px; left: -107px;">
+            <i class="bi bi-window" style="font-size: 48px;"></i>
+            <br>
+            <p style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                Web view
+            </p>
+            </div>
+          </div>
+          &emsp;
+          <div style="float: right;">
+            <img src="https://cdn.glitch.com/702773f6-09f4-4fc6-b7d6-303b28d605da%2Fplace.png?v=1630711364898" style="width: 170px; height: 304px; position: relative; right: -178px; top: -286px; object-fit: cover; z-index: 600; object-fit: cover;" id="media-prev-img">
+        <img src="https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/ad-preview%20(1).svg?v=1649983028293" style="width: 220px; position: relative; right: 20px; top: -240px; z-index: 10000;">
+          </div>
+          <video src="" style="width: 170px; height: 304px; position: relative; right: -348px; top: -216px; object-fit: cover; z-index: 599; object-fit: cover; float: right;" id="media-prev-mov" autoplay muted loop></video>
+          <div style="float: right; position: fixed; position: -webkit-fixed; bottom: 20px; right: 20px;">
+            <button class="primary" style="width: 80px; display: inline; float: right; margin-top: 12px;" id="media-s-btn" type="button">
+              Next
+            </button>
+            &ensp;
+            <p style="color: #00B3FF; text-transform: uppercase; letter-spacing: 1px; float: right; display: inline; margin-right: 18px; position: relative; top: 10px; font-size: 12px; cursor: pointer;" id="media-s-c">
+              Dismiss
+            </p>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div style="float: left: margin-left: 20px; position: fixed; position: -webkit-fixed; left: 20px; bottom: 26px;">
+            <h4 style="font-weight: 600; text-align: left;">
+              Import media&ensp;<i class="bi bi-info-circle" id=""></i>
+            </h4>
+            <br>
+            <p style="color: #CCCCCC; text-align: left; margin-top: -36px; font-size: 12px;">
+            Import a photo or video via URL to set up your advertisement.
+          </p>
+            <br>
+                        <div style="display: inline; position: relative; float: left;">
+              <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Photo
+              </p>
+              <br>
+                          <br>
+               <p
+                style="
+                  text-align: right;
+                  float: right;
+                  color: #cccccc;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  font-size: 14px;
+                  margin-top: 4px;
+                "
+              >
+                Video
+              </p>
+            </div>
+            <div style="display: inline; float: left; margin-left: 20px;">
+            <input type="text" name="media-photo" class="input-ads" placeholder="https://" style="float: left; margin-top: -10px; z-index: 600;" id="img-receiver" onblur="displayImg()">
+              <br>
+              <input type="text" name="media-video" class="input-ads" placeholder="https://" style="float: left; margin-top: 0px; z-index: 600;" id="mov-receiver" onblur="displayMov()">
+          </div>
+          </div>
+      </div>
+        <div class="ready-s" id="ready-s">
+          <br>
+          <br>
+          <h1 style="font-weight: 600;">
+            Ready to send
+          </h1>
+          <br>
+        <p style="width: 400px; color: #CCCCCC; margin-top: -26px;">
+          Your ad is ready to be sent for review. Just click the Confirm button to proceed.
+        </p>
+          <br>
+          <button type="submit" class="primary" style="width: 180px;" id="confirm-btn">
+            Confirm
+          </button>
+        </div>
+
+      </div>
+      </form>
+      <div class="checkout-cont animate-reveal" id="checkout-view">
+        <div class="emerge" style="width: 100%; height: 80px; position: sticky; position: -webkit-sticky; top: 0; background-color: #FFFFFF; filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08)); z-index: 100000;">
+          <i class="bi bi-x-lg" id="checkout-c" style="float: left; margin-left: 20px; font-size: 30px; margin-top: 22px; position: relative; cursor: pointer;"></i>
+          &emsp;
+          <p style="font-size: 18px; font-weight: 500; text-align: center; position: fixed; top: 30px; margin: 0; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+           Checkout
+          </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="font-weight: 500;">
+          Select a payment plan
+        </h1>
+        <br>
+        <p style="width: 400px; color: #CCCCCC; margin-top: -26px;">
+          ARBOOX offers flexible plans to run ad campaigns. Select the plan that best fits your budget.
+        </p>
+        <br>
+        <br>
+        <br>
+          <div style="display: inline-block; width: 300px; height: 380px; background-color: #FFFFFF; filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.06)); position: relative; border-radius: 16px;">
+            <p style="font-size: 20px; text-align: left; margin-left: 18px;">
+              Basic
+            </p>
+            <br> 
+            <br> 
+            <h1 style="font-family: 'Basier Circle', system-ui; font-weight: 600; text-align: left; margin-left: 18px; font-size: 40px; margin-top: -44px; display: inline; float: left;">
+              USD $2
+            </h1>
+            &ensp;
+            <p style="float: left; color: #CCCCCC; display: inline; text-transform: uppercase; margin-left: 12px; margin-top: -36px;">
+              Per <br> day
+            </p>
+            <br>
+            <br>
+            <div style="width: 264px; height: 0.6px; background-color: #E3E3E3; margin-top: -10px;">
+              
+            </div>
+            <br>
+           <p style="text-align: left; margin-left: 18px; margin-top: 4px; float: left; width: 260px;">
+              Our cheapest plan, ideal for experimental advertising. Reach your target audience and desired impressions, while preserving your budget.
+            </p>
+            <br>
+            <br>
+            <p style="text-align: left; margin-left: 18px; color: #CCCCCC; clear: both; position: relative; top: 10px;" title="Total impressions (estimate)">
+              <i class="bi bi-people"></i>&ensp;1.2K
+            </p>
+            &ensp;
+            <p style=" text-align: left; color: #CCCCCC; display: inline; position: relative; top: -25px; left: -30px;" title="Conversion rate increase (estimate)">
+              <i class="bi bi-bar-chart-line"></i>&ensp;26%
+            </p>
+            <br>
+            <button class="primary-black" style="width: 264px;" id="basicpb" type="button">
+              Purchase
+            </button>
+        </div>
+        &emsp;
+        <div style="display: inline-block; width: 300px; height: 380px; background-color: #FFFFFF; filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.06)); position: relative; border-radius: 16px;">
+            <p style="font-size: 20px; text-align: left; margin-left: 18px;">
+              Level up
+            </p>
+            <br> 
+            <br> 
+            <h1 style="font-family: 'Basier Circle', system-ui; font-weight: 600; text-align: left; margin-left: 18px; font-size: 40px; margin-top: -44px; display: inline; float: left;">
+              USD $6
+            </h1>
+            &ensp;
+            <p style="float: left; color: #CCCCCC; display: inline; text-transform: uppercase; margin-left: 12px; margin-top: -36px;">
+              Per <br> day
+            </p>
+            <br>
+            <br>
+            <div style="width: 264px; height: 0.6px; background-color: #E3E3E3; margin-top: -10px;">
+              
+            </div>
+            <br>
+           <p style="text-align: left; margin-left: 18px; margin-top: 4px; float: left; width: 260px;">
+              Our mid-tier plan, ideal for small businesses and short term campaigns. Reach a wide audience and increase your conversion rate.
+            </p>
+            <br>
+            <br>
+            <p style="text-align: left; margin-left: 18px; color: #CCCCCC; clear: both; position: relative; top: 10px;" title="Total impressions (estimate)">
+              <i class="bi bi-people"></i>&ensp;4K
+            </p>
+            &ensp;
+            <p style=" text-align: left; color: #CCCCCC; display: inline; position: relative; top: -25px; left: -30px;" title="Conversion rate increase (estimate)">
+              <i class="bi bi-bar-chart-line"></i>&ensp;48%
+            </p>
+            <br>
+            <button class="primary-black" style="width: 264px;" id="midtierpb" type="button">
+              Purchase
+            </button>
+        </div>
+         &emsp;
+        <div style="display: inline-block; width: 300px; height: 380px; background-color: #FFFFFF; filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.06)); position: relative; border-radius: 16px;">
+            <p style="font-size: 20px; text-align: left; margin-left: 18px;">
+              Ads, ads, ads!
+            </p>
+            <br> 
+            <br> 
+            <h1 style="font-family: 'Basier Circle', system-ui; font-weight: 600; text-align: left; margin-left: 18px; font-size: 40px; margin-top: -44px; display: inline; float: left;">
+              USD $12
+            </h1>
+            &ensp;
+            <p style="float: left; color: #CCCCCC; display: inline; text-transform: uppercase; margin-left: 12px; margin-top: -36px;">
+              Per <br> day
+            </p>
+            <br>
+            <br>
+            <div style="width: 264px; height: 0.6px; background-color: #E3E3E3; margin-top: -10px;">
+              
+            </div>
+            <br>
+           <p style="text-align: left; margin-left: 18px; margin-top: 4px; float: left; width: 260px;">
+              Best for brands and businesses looking to maximize impressions, growth and traffic accross channels organically while preserving a bigger budget. 
+            </p>
+            <br>
+            <br>
+            <p style="text-align: left; margin-left: 18px; color: #CCCCCC; clear: both; position: relative; top: 10px;" title="Total impressions (estimate)">
+              <i class="bi bi-people"></i>&ensp;10K
+            </p>
+            &ensp;
+            <p style=" text-align: left; color: #CCCCCC; display: inline; position: relative; top: -25px; left: -30px;" title="Conversion rate increase (estimate)">
+              <i class="bi bi-bar-chart-line"></i>&ensp;54%
+            </p>
+            <br>
+            <button class="primary-black" style="width: 264px;" id="superchargedpb" type="button">
+              Purchase
+            </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br> 
+        <p style="color: #CCCCCC; font-size: 14px; width: 500px;">
+          Our payments infrastructure is provided by Stripe. Your ad will be sent for review after your payment is completed. You will be charged daily and you can cancel anytime. After paying, close the Stripe window to continue.
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="checkout-cont" id="success-view">
+        <div class="emerge" style="width: 100%; height: 80px; position: sticky; position: -webkit-sticky; top: 0; background-color: #FFFFFF; filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.08)); z-index: 100000;">
+          <i class="bi bi-x-lg" id="success-c" style="float: left; margin-left: 20px; font-size: 30px; margin-top: 22px; position: relative; cursor: pointer;"></i>
+          &emsp;
+          <p style="font-size: 18px; font-weight: 500; text-align: center; position: fixed; top: 30px; margin: 0; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+           Success
+          </p>
+        </div>
+        <div style="width: 100%; height: 100%; background: linear-gradient(180deg, #00B3FF -32.81%, #0094FF 100%);">
+          <div style="width: 70%; max-width: 700px;">
+          <video style="width: 250px; height: 450px; object-fit: cover; border-radius: 14px; filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1)); margin-top: 40px; float: left;display: inline;" src="..." poster="" id="success-interactive" autoplay muted></video>
+          &ensp;
+          <div style="position: relative; left: 40px; top: 120px;">
+          <h1 style="font-weight: 500; color: #FFFFFF; font-size: 36px; text-align: left; font-size: 40px;">
+            Ad sent for review.
+          </h1>
+            <br>
+            <p style="text-align: left; color: #FFFFFF; margin-top: -30px;">
+              We're now making sure your advertisement meets our <a href="https://ads.arboox.com/guidelines" target="_blank" style="color: inherit;">guidelines</a>. For any updates on your ad's status, we'll send you an e-mail notification. You can now close Ads Studio. If you have more questions, visit our <a href="https://support.arboox.com/" target="_blank" style="color: inherit;">Support Centre</a>.
+            </p>
+        </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br> 
+        <p style="color: #CCCCCC; font-size: 14px; width: 500px;">
+          Copyright © 2022 ARBOOX™. All rights reserved.
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </center>
+    <script>
+      function displayImg() {
+        var x = document.getElementById("img-receiver").value;
+        document.getElementById("media-prev-img").src = x;
+        document.getElementById("media-prev-mov").style.zIndex = "599";
+        document.getElementById("media-prev-img").style.zIndex = "600";
+        document.getElementById("ad-final-img").style.zIndex = "600";
+        document.getElementById("ad-final-mov").style.zIndex = "599";
+        document.getElementById("ad-final-img").src = x;
+        document.getElementById("success-interactive").poster = x;
+      }
+      
+      function displayMov() {
+        var x = document.getElementById("mov-receiver").value;
+        document.getElementById("media-prev-mov").src = x;
+        document.getElementById("media-prev-mov").style.zIndex = "600";
+        document.getElementById("media-prev-img").style.zIndex = "599";
+        document.getElementById("ad-final-img").style.zIndex = "599";
+        document.getElementById("ad-final-mov").style.zIndex = "600";
+        document.getElementById("ad-final-mov").src = x;
+        document.getElementById("success-interactive").src = x;
+      }
+      
+      document.querySelector("#media-s-t").addEventListener("click", function() {
+  document.querySelector("#media-s").style.display = "block";
+});
+      
+      document.querySelector("#media-s-c").addEventListener("click", function() {
+  document.querySelector("#media-s").style.display = "none";
+});
+      
+       document.querySelector("#media-s-btn").addEventListener("click", function() {
+  document.querySelector("#media-s").style.display = "none";
+});
+      
+      document.querySelector("#checkout-t").addEventListener("click", function() {
+  document.querySelector("#checkout-view").style.display = "block";
+});
+      
+       document.querySelector("#checkout-c").addEventListener("click", function() {
+  document.querySelector("#checkout-view").style.display = "none";
+});
+      
+      document.querySelector("#confirm-btn").addEventListener("click", function() {
+  document.querySelector("#success-view").style.display = "block";
+});
+      
+      document.querySelector("#success-c").addEventListener("click", function() {
+  document.querySelector("#success-view").style.display = "none";
+        document.querySelector("#ready-s").style.display = "none";
+});
+    </script>
+    <script payments>
+      var basicpb = document.getElementById("basicpb");
+      var midtierpb = document.getElementById("midtierpb");
+      var superchargedpb = document.getElementById("superchargedpb");
+      
+basicpb.onclick = function() {
+    var win = window.open(
+        "https://buy.stripe.com/bIYg2z3ABcFR3V6bIN");
+    var timer = setInterval(function() {
+        if (win.closed) {
+            clearInterval(timer);
+            paid();
+        }
+    }, 500);
+}
+      
+      midtierpb.onclick = function() {
+    var win = window.open(
+        "https://buy.stripe.com/aEU7w35IJeNZcrC5kq");
+    var timer = setInterval(function() {
+        if (win.closed) {
+            clearInterval(timer);
+            paid();
+        }
+    }, 500);
+}
+      
+            superchargedpb.onclick = function() {
+    var win = window.open(
+        "https://buy.stripe.com/eVacQn5IJ49l3V6dQX");
+    var timer = setInterval(function() {
+        if (win.closed) {
+            clearInterval(timer);
+            paid();
+        }
+    }, 500);
+}
+
+function paid() {
+    document.getElementById("checkout-view").style.display = "none";
+  document.getElementById("ready-s").style.display = "block";
+}
+    </script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxDDzVxOFXuc2AAcwJg2bxYIwj41-iCWISamXbFsIs9BVwA3nyd1Q_v2dBH9yqgBODN/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+  </body>
+</html>
