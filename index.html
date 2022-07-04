@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -25,7 +25,7 @@
       background-color: #00B3FF;
       margin: 0px;
       font-family: 'Nationale', system-ui;
-      overflow-x: hidden;
+      overflow: auto;
     }
     
     .lg {
@@ -52,34 +52,15 @@
 
      .footer {
       background-color: #f8f9fa;
-    }
-
-    .footer-separator {
-      background-color: #e9ecef;
-    }
-
-     @media screen and (max-width: 550px) {
-      .footer-column {
-        display: block;
-        float: left;
-      }
-
-      .footer-column-2 {
-        display: block;
-        margin-top: 32px;
-        position: relative;
-        left: -36px;
-        float: left;
-      }
+      height: 60px;
+      position: fixed;
+      position: -webkit-fixed;
+      bottom: 0;
     }
 
     @media (prefers-color-scheme: dark) {
       .footer {
         background-color: #0a0a0a;
-      }
-
-      .footer-separator {
-        background-color: #444444;
       }
     }
 
@@ -91,15 +72,8 @@
       color: #ababab;
       float: left;
       text-align: left;
-    }
-
-    .footer-column {
-      display: inline-block;
-      float: left;
-    }
-
-    .footer-column-2 {
-      margin-left: 40px;
+      font-size: 12px;
+      top: 8px;
     }
     
     .h1-hover-effect {
@@ -148,286 +122,37 @@
       <br>
       <br>
       <div
-          style="width: 100%; height: auto; overflow: hidden; min-height: 200px"
+          style="width: 100%; overflow: hidden;"
           class="footer"
         >
-          <div style="width: 86%">
-            <p
-              style="
-                font-family: 'Nationale', system-ui;
-                color: #ababab;
-                text-align: left;
-                float: left;
-                width: 100%;
-                max-width: 800px;
-                font-size: 14px;
-                position: relative;
-                top: 18px;
-                display: inline-block;
-              "
-               id="global-footer-desc"
-            >
-              ARBOOX is the world's first augmented reality app with
-              high-quality experience streaming and high-def videos, along with
-              curated content from popular brands and creators — making it a
-              trusted place for AR on the internet.
-            </p>
-            <br />
-            <div style="clear: both"></div>
-            <div
-              style="width: 100%; height: 1.3px; position: relative; top: 30px"
-              class="footer-separator"
-            ></div>
-            <br />
-            <br />
-            <br />
-            <div class="footer-column">
-              <p
-                class="footer-column-title"
-                style="
-                  font-family: 'Nationale', system-ui;
-                  color: #cccccc;
-                  text-transform: uppercase;
-                  float: left;
-                  font-weight: 500;
-                "
-                 id="global-footer-col-t-1"
-              >
-                The ARBOOX™ Company
-              </p>
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://about.arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >About</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/privacy"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Privacy</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://store.arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Store</a
-              >
-            </div>
-            <div class="footer-column footer-column-2">
-              <p
-                style="
-                  font-family: 'Nationale', system-ui;
-                  color: #cccccc;
-                  text-transform: uppercase;
-                  float: left;
-                  font-weight: 500;
-                "
-                 id="global-footer-col-t-2"
-              >
-                Products&ensp;&&ensp;services
-              </p>
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Mobile</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/studio"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Studio</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/advertise"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Advertise in ARBOOX</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/referrals"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Refer a friend</a
-              >
-            </div>
-            <div class="footer-column footer-column-2">
-              <p
-                style="
-                  font-family: 'Nationale', system-ui;
-                  color: #cccccc;
-                  text-transform: uppercase;
-                  float: left;
-                  font-weight: 500;
-                "
-                 id="global-footer-col-t-3"
-              >
-                Get help
-              </p>
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://support.arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Support centre</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="mailto:arbooxapp@gmail.com?subject=Support"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Contact us</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-              ></a>
-            </div>
-            <div class="footer-column footer-column-2">
-              <p
-                style="
-                  font-family: 'Nationale', system-ui;
-                  color: #cccccc;
-                  text-transform: uppercase;
-                  float: left;
-                  font-weight: 500;
-                "
-                 id="global-footer-col-t-4"
-              >
-                Other
-              </p>
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/anchors"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Anchor experiences</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://about.arboox.com/"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >Press</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="mailto:arbooxapp@gmail.com"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >General inquiries</a
-              >
-            </div>
-            <div class="footer-column footer-column-2">
-              <p
-                style="
-                  font-family: 'Nationale', system-ui;
-                  color: #cccccc;
-                  text-transform: uppercase;
-                  float: left;
-                  font-weight: 500;
-                "
-                 id="global-footer-col-t-5"
-              >
-                Connect
-              </p>
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://arboox.com/@/arboox"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >AB</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://instagram.com/arbooxapp"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >IG</a
-              >
-              <br />
-              <br />
-              <div style="clear: both"></div>
-              <a
-                href="https://twitter.com/arbooxapp"
-                style="text-align: left; float: left"
-                class="h1-hover-effect"
-                >TW</a
-              >
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <div style="clear: both"></div>
-            <div style="float: left; display: inline-block; margin-top: 60px">
-              <img
-                src="https://cdn.glitch.com/a9c4e687-7c99-4065-88c1-02e69edfd394%2Fapp-icon.svg?v=1625246866247"
-                style="width: 26px; float: left; border-radius: 8px"
-              />
-              &emsp;
-              <p
-                class="copyright"
-                style="
-                  display: inline-block;
-                  margin-left: 12px;
-                  margin-top: 5px;
-                  font-size: 12px;
-                "
-              >
-               © 2022 ARBOOX™
-              </p>
-            </div>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+        <h3
+        style="
+          font-family: 'Neurial Grotesk', system-ui;
+          font-weight: 500;
+          text-transform: uppercase;
+          float: left;
+          margin-left: 20px;
+          position: relative;
+          top: -2px;
+        "
+      >
+        <b>ARBOOX™</b>
+      </h3>
+        <a href="https://arboox.com" target="_blank" class="h1-hover-effect" style="float: left; margin-left: 20px; position: relative; top: 18px;">
+          Mobile
+        </a>
+        <a href="https://arboox.com/create" target="_blank" class="h1-hover-effect" style="float: left; margin-left: 20px; position: relative; top: 18px;">
+          Create
+        </a>
+        <a href="https://about.arboox.com" target="_blank" class="h1-hover-effect" style="float: left; margin-left: 20px; position: relative; top: 18px;">
+          About
+        </a>
+        <a href="https://support.arboox.com" target="_blank" class="h1-hover-effect" style="float: left; margin-left: 20px; position: relative; top: 18px;">
+          Support
+        </a>
+        <p class="copyright" style="float: right; margin-right: 20px;">
+          © 2022 ARBOOX™
+        </p>
         </div>
     </center>
   </body>
