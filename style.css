@@ -181,3 +181,557 @@
     transform: translateY(0);
   }
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Nationale', system-ui;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  z-index: 10000;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: #cccccc60;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.touch-action {
+  cursor: pointer;
+  transition: linear 100ms;
+}
+
+.touch-action:active {
+  opacity: 0.5;
+  transform: scale(0.94);
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  position: -webkit-fixed;
+  top: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.main {
+  width: 100%;
+  height: calc(100% - 60px);
+  position: fixed;
+  position: -webkit-fixed;
+  bottom: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px -2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.preview {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #F6F6F6;
+  border-right: solid 1px #EEEEEE;
+  overflow: hidden;
+  transition: linear 100ms;
+}
+
+.advert {
+  width: 240px;
+  height: 426px;
+  background-color: #FFFFFF;
+  margin-top: 9%;
+  filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.04));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.upload-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 40px;
+  background-color: #0094FF;
+  position: fixed;
+  position: -webkit-fixed;
+  bottom: 16px;
+  left: 16px;
+  overflow: hidden;
+  color: #FFFFFF;
+  font-family: 'Nationale', system-ui;
+  font-weight: 600;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.04);
+  transition: linear 100ms;
+}
+
+.upload-btn:hover {
+  width: 180px;
+}
+
+#up-btn-text {
+  display: none;
+}
+
+#up-btn-ic {
+  position: relative;
+  left: 4px;
+}
+
+.upload-btn:hover #up-btn-text {
+  display: inline-block;
+}
+
+.upload-btn:hover #up-btn-ic {
+  left: 0px;
+}
+
+.preview-controls {
+  width: 36px;
+  height: 74px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.04);
+  color: #E3E3E3;
+}
+
+.prev-c-divider {
+  background-color: #E3E3E3;
+}
+
+.obj-sel {
+  -webkit-appearance: none;
+    appearance: none;
+    width: 160px;
+    height: 140px;
+    border: solid 1.2px #E3E3E3;
+    border-radius: 8px;
+    float: left;
+    cursor: pointer;
+    transition: linear 100ms;
+    background-color: transparent;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.obj-sel:checked {
+  border: solid 3px #0094FF;
+}
+
+#o-s-1 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/traffic-state-0.svg?v=1656644973125');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#o-s-1:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/traffic-state-selected.svg?v=1656645051720');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#o-s-2 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/downloads-state-0.svg?v=1656645160806');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#o-s-2:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/downloads-state-selected.svg?v=1656645256975');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#o-s-3 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/awareness-state-0.svg?v=1656645354109');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#o-s-3:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/awareness-state-selected.svg?v=1656645453703');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.media-sel {
+  -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 40px;
+    border: solid 1.2px #E3E3E3;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: linear 100ms;
+    background-color: transparent;
+    display: inline-block;
+    margin-top: 0px;
+    float: left;
+}
+
+.media-sel:checked {
+  border: solid 2px #0094FF;
+}
+
+#mt-sel-1 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/type-photo-0.svg?v=1656728150072');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#mt-sel-1:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/type-photo-1.svg?v=1656728194279');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#mt-sel-2 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/type-video-0.svg?v=1656728220719');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#mt-sel-2:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/type-video-1.svg?v=1656728237669');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.adtype-sel {
+  -webkit-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 230px;
+    border: solid 1.2px #E3E3E3;
+    border-radius: 8px;
+    float: left;
+    cursor: pointer;
+    transition: linear 100ms;
+    background-color: transparent;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.adtype-sel:checked {
+  border: solid 3px #0094FF;
+}
+
+#adt-sel-1 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/short-state-0.svg?v=1656783936375');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#adt-sel-1:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/short-state-1.svg?v=1656783956523');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#adt-sel-2 {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/appinstall-state-0.svg?v=1656783983453');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#adt-sel-2:checked {
+  background: url('https://cdn.glitch.global/702773f6-09f4-4fc6-b7d6-303b28d605da/appinstall-state-1.svg?v=1656783997287');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.input-ads {
+    height: 36px;
+    font-family: "Nationale", system-ui;
+    font-size: 20px;
+    border: none;
+    border-bottom: solid 1.6px #e3e3e3;
+    display: inline;
+    transition: linear 100ms;
+    outline: none;
+    background: transparent;
+} 
+
+.input-ads:focus {
+  border-bottom: solid 2px #0094FF;
+}
+
+::placeholder { 
+  color: #E3E3E3;
+  opacity: 1;
+}
+
+:-ms-input-placeholder { 
+  color: #E3E3E3;
+}
+
+.options-t {
+  width: 30px;
+  height: 30px;
+  border: solid 1px #E3E3E3;
+  border-radius: 40px;
+  float: right;
+  display: inline-block;
+  margin-top: -60px;
+  color: #ABABAB;
+}
+
+.overlay {
+  width: 100%;
+  height: calc(100% - 60px);
+  position: fixed;
+  position: -webkit-fixed;
+  bottom: 0;
+  background-color: #FFFFFF20;
+  backdrop-filter: blur(20px);
+  display: none;
+}
+
+.section {
+  width: 60%;
+  height: calc(100% - 70px);
+  position: fixed;
+  position: -webkit-fixed;
+  bottom: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.m {
+  width: auto;
+  height: auto;
+  min-height: 36px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.08);
+}
+
+.m-item {
+  width: auto;
+  height: 36px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: linear 100ms;
+}
+
+.m-item:hover {
+  background-color: #F6F6F6;
+}
+
+.view {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  position: fixed; 
+  position: -webkit-fixed;
+  bottom: 0;
+  z-index: 100000000000;
+  display: none;
+}
+
+.progress-bar {
+  height: 3px;
+  background-color: transparent;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar-value {
+  width: 100%;
+  height: 100%;
+  background-color: #0094FF;
+  animation: indeterminateAnimation 1s infinite linear;
+  transform-origin: 0% 50%;
+}
+
+.publish-card-main {
+  width: 70%;
+  height: 490px;
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 0px 0px;
+  border: solid 1px #E3E3E3;
+  border-bottom: none;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.06);
+  float: left; 
+  position: fixed;
+  position: -webkit-fixed;
+  bottom: 0px;
+}
+
+.skeleton {
+  background: #F0F0F0;
+    background: linear-gradient(110deg, #f0f0f0 8%, #f5f5f5 18%, #f0f0f0 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+.separator {
+  background-color: #E3E3E3;
+}
+
+.budget-card {
+  width: calc(100% - 20px);
+  height: 280px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: solid 1px #E3E3E3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.06);
+  float: left;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000;
+    color: #F8F8F8;
+  }
+  
+  .preview {
+    background-color: #222222;
+    border-right: solid 1px #444444;
+  }
+  
+  .advert {
+    background-color: #111111;
+  }
+  
+  .main {
+    background-color: #111111;
+  }
+  
+  .input-ads {
+    border-bottom: solid 1.6px #444444;
+    color: #F8F8F8;
+  }
+  
+  .obj-sel {
+    border: solid 1.2px #444444;
+  }
+  
+  .preview-controls {
+    background-color: #000000;
+  }
+  
+  .m {
+    background-color: #000000;
+  }
+  
+  .m-item:hover {
+    background-color: #111111;
+  }
+  
+  .overlay {
+    background-color: #00000020;
+  }
+  
+  .section {
+    background-color: #000000;
+  }
+  
+  .view {
+    background-color: #000000;
+  }
+  
+  .progress-bar-value {
+    background-color: #FFFFFF;
+  }
+  
+  .publish-card-main {
+    background-color: #111111;
+    border: solid 1px #444444;
+  }
+  
+  .skeleton {
+    background: #222222;
+    background: linear-gradient(110deg, #222222 8%, #333333 18%, #222222 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1s shine linear infinite;
+  }
+  
+  .separator {
+    background-color: #444444;
+  }
+  
+  .budget-card {
+     background-color: #111111;
+    border: solid 1px #444444;
+  }
+}
+
+.emerge {
+  opacity: 0;
+  -webkit-animation: emerge 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+  animation: emerge 0.4s cubic-bezier(0, 1, 0.5, 1) 1 normal forwards;
+}
+
+@-webkit-keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes indeterminateAnimation {
+  0% {
+    transform:  translateX(0) scaleX(0);
+  }
+  40% {
+    transform:  translateX(0) scaleX(0.4);
+  }
+  100% {
+    transform:  translateX(100%) scaleX(0.5);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
